@@ -1,0 +1,165 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Laba4._2
+{
+ 
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        Pen pen = new Pen(Color.Black, 2);
+        SolidBrush brush = new SolidBrush(Color.Black);
+
+
+        private void Form1_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics g = e.Graphics;
+            g.Clear(Color.White);
+            g.DrawLine(pen, 20, 190, 30, 200);
+            g.DrawLine(pen, 20, 210, 30, 200);
+            g.DrawString("XS1", new Font("Arial", 11), Brushes.Black, 15, 170);
+            g.DrawString("Input", new Font("Arial", 11), Brushes.Black, 15, 220);
+            g.DrawLine(pen, 30, 200, 80, 200);
+            g.DrawString("C2", new Font("Arial", 11), Brushes.Black, 75, 155);
+            g.DrawLine(pen, 80, 180, 80, 220);
+            g.DrawLine(pen, 80, 180, 80, 220);
+            g.DrawLine(pen, 90, 180, 90, 220);
+            g.DrawLine(pen, 90, 200, 140, 200);
+            //////---------------------------------- point
+            g.FillEllipse(brush, 135, 190, 20, 20);
+            g.DrawLine(pen, 140, 200, 200, 200);
+            ////////Круг
+            g.DrawEllipse(pen, 180, 175, 50, 50);
+            g.DrawString("VT1", new Font("Arial", 11), Brushes.Black, 155, 160);
+            g.DrawLine(pen, 200, 180, 200, 220);
+            g.DrawLine(pen, 200, 190, 220, 178);//наклон
+            g.DrawLine(pen, 200, 210, 220, 222);//наклон
+            g.FillPie(brush, 210, 210, 25, 20, 180 ,30);//Arrow
+            g.DrawLine(pen, 220, 222, 220, 260);
+            g.DrawString("R7", new Font("Arial", 11), Brushes.Black, 240, 280);
+            g.DrawRectangle(pen, 210, 260, 20, 50);
+            g.DrawLine(pen, 220, 310, 220, 330);
+            g.FillEllipse(brush, 210, 320, 20, 20);
+            g.DrawLine(pen, 210, 330, 145, 330);
+            //////////////////////////////////////
+            g.DrawLine(pen, 145, 330, 145, 310);
+            g.DrawRectangle(pen, 135, 260, 20, 50);
+            g.DrawLine(pen, 145, 260, 145, 190);
+            g.DrawString("R6", new Font("Arial", 11), Brushes.Black, 165, 280);
+            ///////////////////////////////////////////////////////
+            g.DrawLine(pen, 220, 178, 220, 165);
+            g.FillEllipse(brush, 210, 150, 20, 20);
+            g.DrawLine(pen, 220, 160, 280, 160);
+            g.DrawEllipse(pen, 260, 135, 50, 50);
+            g.DrawString("VT2", new Font("Arial", 11), Brushes.Black, 310, 120);
+            g.DrawLine(pen, 280, 140, 280, 180);
+            g.DrawLine(pen, 280, 150, 300, 138);//наклон
+            g.DrawLine(pen, 280, 170, 300, 182);//naklon
+            g.FillPie(brush, 290, 170, 25, 20, 180, 30);//Arrow
+            /////////////////////////////////////////////////////////
+            g.DrawLine(pen, 300, 182, 300, 220);
+            g.FillEllipse(brush, 290, 215, 20, 20);
+            g.DrawLine(pen, 300, 220, 300, 260);
+            g.DrawRectangle(pen, 290, 260, 20, 50);
+            g.DrawString("R8", new Font("Arial", 11), Brushes.Black, 320, 280);
+            g.DrawLine(pen, 300, 310, 300, 330);
+            g.FillEllipse(brush, 290, 320, 20, 20);
+            g.DrawLine(pen, 290, 330, 150, 330);
+            ////////////////////////////////////////////////////
+            g.DrawLine(pen, 300, 138, 300, 30);//наклон
+            g.FillEllipse(brush, 290, 20, 20, 20);
+            g.DrawLine(pen, 220, 160, 220, 140);
+            g.DrawRectangle(pen, 210, 90, 20, 50);
+            g.DrawString("R1", new Font("Arial", 11), Brushes.Black, 240, 100);
+            g.DrawLine(pen, 220, 90, 220, 30);
+            g.DrawLine(pen, 220, 30, 300, 30);
+            g.DrawLine(pen, 300, 30, 760, 30);
+            g.DrawLine(pen, 750, 20, 760, 30);
+            g.DrawLine(pen, 750, 40, 760, 30);
+            g.DrawString("XP1", new Font("Arial", 11), Brushes.Black, 700, 10);
+            g.DrawString("+U", new Font("Arial", 11), Brushes.Black, 700, 45);
+            //////////////////////////////////////////////////////
+            g.FillEllipse(brush, 290, 215, 20, 20);
+            g.DrawLine(pen, 290, 225, 360, 225);
+            g.DrawLine(pen, 360, 225, 360, 70);/////?
+            g.DrawLine(pen, 360, 70, 400, 70);
+            g.FillEllipse(brush, 400, 60, 20, 20);
+            g.DrawLine(pen, 410, 70, 410, 90);
+            g.DrawRectangle(pen, 400, 90, 20, 50);
+            g.DrawString("R2", new Font("Arial", 11), Brushes.Black, 430, 90);
+            g.DrawLine(pen, 410, 140, 410, 160);
+  
+            g.FillEllipse(brush, 400, 150, 20, 20);
+            g.DrawLine(pen, 410, 150, 410, 250);
+            //////////////////////////////////////////
+            g.DrawLine(pen, 410, 250, 510, 250);//1
+            g.DrawLine(pen, 410, 160, 510, 160);//2
+            g.DrawLine(pen, 410, 70, 510, 70);//1
+
+            g.DrawLine(pen, 510, 50, 510, 90);
+            g.DrawString("C1", new Font("Arial", 11), Brushes.Black, 480, 40);
+            g.DrawLine(pen, 520, 50, 520, 90);
+            g.DrawLine(pen, 510, 140, 510, 180);
+            g.DrawString("C3", new Font("Arial", 11), Brushes.Black, 480, 130);
+            g.DrawLine(pen, 520, 140, 520, 180);
+            g.DrawLine(pen, 510, 230, 510, 270);
+            g.DrawString("C4", new Font("Arial", 11), Brushes.Black, 480, 220);
+            g.DrawLine(pen, 520, 230, 520, 270);
+            ///////////////////////////////////
+            g.DrawLine(pen, 520, 70, 580, 70);
+            g.DrawLine(pen, 580, 70, 580, 90);
+            g.DrawRectangle(pen, 570, 90, 20, 50);
+            g.DrawString("R3", new Font("Arial", 11), Brushes.Black, 600, 90);
+            g.DrawLine(pen, 580, 140, 580, 160);
+            g.FillEllipse(brush, 570, 150, 20, 20);
+            g.DrawLine(pen, 570, 160, 550, 160);
+            g.FillEllipse(brush, 530, 150, 20, 20);
+            g.DrawLine(pen, 520, 160, 550, 160);
+            //////////////////////////////////////
+            g.DrawLine(pen, 580, 160, 580, 180);
+            g.DrawRectangle(pen, 570, 180, 20, 50);
+            g.DrawString("R4", new Font("Arial", 11), Brushes.Black, 600, 180);
+            g.DrawLine(pen, 540, 160, 540, 205);
+            g.DrawLine(pen, 540, 205, 570, 205);
+            g.FillPolygon(brush, new Point[] { new Point(570, 205), new Point(560, 200), new Point(560, 210), new Point(570, 205) });
+            
+            g.DrawLine(pen, 300, 330, 580, 330);
+            g.DrawLine(pen, 580, 330, 580, 310);
+            g.FillEllipse(brush, 570, 320, 20, 20);
+            g.DrawRectangle(pen, 570, 260, 20, 50);
+            g.DrawString("R9", new Font("Arial", 11), Brushes.Black, 600, 260);
+            g.DrawLine(pen, 580, 230, 580, 260);
+            /////////////////////////
+            g.DrawLine(pen, 520, 250, 540, 250);
+            g.DrawLine(pen, 540, 250, 540, 285);
+            g.DrawLine(pen, 540, 285, 570, 285);
+            g.FillPolygon(brush, new Point[] { new Point(570, 285), new Point(560, 280), new Point(560, 290), new Point(570, 285) });
+            g.DrawLine(pen, 580, 330, 650, 330);
+            g.DrawRectangle(pen, 640, 180, 20, 50);
+            g.DrawString("R5", new Font("Arial", 11), Brushes.Black, 660, 180);
+            g.DrawString("XP2", new Font("Arial", 11), Brushes.Black, 690, 170);
+            /////
+            g.DrawLine(pen, 650, 330, 650, 230);
+            g.DrawLine(pen, 590, 115, 650,115);
+            g.DrawLine(pen, 650, 180, 650, 115);
+            g.FillPolygon(brush, new Point[] { new Point(590, 115), new Point(600, 110), new Point(600, 120), new Point(590, 115) });
+            g.DrawLine(pen, 660, 207, 760, 207);
+            g.DrawLine(pen, 750, 217, 760, 207);
+            g.DrawLine(pen, 750, 197, 760, 207);
+            g.DrawString("Output", new Font("Arial", 11), Brushes.Black, 700, 215);
+            g.FillPolygon(brush, new Point[] { new Point(660, 207), new Point(670, 202), new Point(670, 212), new Point(660, 207) });
+        }
+
+    }
+}
