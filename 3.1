@@ -1,0 +1,121 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace LABA3
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            button1.Enabled = false;
+            button2.Enabled = false;
+            textBox2.Enabled = false;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            textBox2.Enabled = true;
+            textBox2.Text = " ";
+            String str = textBox1.Text;
+            int count = str.Length;
+
+            if (count >= 200)
+            {
+                MessageBox.Show("Строка превышает лимит символов");
+            }
+            char[] L = str.ToCharArray();
+
+            if (count % 2 == 0)
+            {
+                int i = 0;
+                while (L[i] != ' ')
+                {
+                    textBox2.Text += L[i].ToString();
+                    i++;
+                }
+            }
+            else
+            {
+                textBox2.Text = "Нечётное количество символов";
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            textBox2.Enabled = true;
+            textBox2.Text = " ";
+            String str = textBox1.Text;
+            int count = str.Length;
+            char[] L = str.ToCharArray();
+            if (count >= 200)
+            {
+                MessageBox.Show("Строка превышает лимит символов");
+            }
+            char point = '.';
+            String str1 = " ";
+            String str2 = " ";
+            int i = 0;
+            int indexOfChar = str.IndexOf(point);
+            for (i = indexOfChar + 1; i < count; i++)
+            {
+                textBox2.Text += L[i].ToString();
+
+                if (L[i] == ' ')
+                {
+                    str1 = textBox2.Text;
+                    textBox2.Text = " ";
+                    break;
+                }
+
+            }
+            for (int j = i + 1; i < count; j++)
+            {
+                while ((L[j] != ' ') && (L[j] != '.'))
+                {
+                    textBox2.Text += L[j].ToString();
+                    j++;
+                }
+                str2= textBox2.Text;
+                textBox2.Text = " ";
+                break;
+            }
+            str = str.Replace(str2, str1);
+            int number = str1.Length;
+            int number1 = str2.Length;
+            str = str.Remove(indexOfChar+1, number-1);
+            str = str.Insert(indexOfChar+1, str2);
+            str = str.Insert(indexOfChar + number1+1, " ");
+
+
+            textBox2.Text = str;
+        }
+
+        private void unlockButton(object sender, EventArgs e)
+        {
+            if (textBox1.Text != String.Empty)
+            {
+                button1.Enabled = true;
+                button2.Enabled = true;
+            }
+            else
+            {
+                button1.Enabled = false;
+                button2.Enabled = false;
+            }
+
+        }
+    }
+}
+
